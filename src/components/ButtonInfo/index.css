@@ -1,0 +1,14 @@
+.btn-informacoes{
+    font-size:12px;
+    font-weight: 800;
+    font-family: "Montserrat";
+    display: flex;
+    align-items: center;
+}
+
+.btn-informacoes span{
+    font-size:12px;
+    font-weight: 800;
+    font-family: "Montserrat";
+    color:#000;
+}
