@@ -1,6 +1,48 @@
 import React, { useState } from "react";
 import ButtonIngredients from "../ButtonIngredients";
-import "./index.css";
+import styled from "styled-components";
+
+const Header = styled.header`
+	display: block;
+	padding: 20px;
+`;
+const Ul = styled.ul`
+	padding-left: 40px;
+	margin-top: 0px;
+	column-count: 3;
+	font-size: 0.8rem;
+	padding-bottom: 20px;
+`;
+
+const P = styled.p`
+	font-size: 0.8rem;
+	margin-left: 20px;
+	padding-top: 5px;
+`;
+
+const Table = styled.table`
+	border: none;
+	font-size: 0.8rem;
+	width: 90%;
+	margin-left: 20px;
+`;
+
+const Th = styled.th`
+	
+	&:nth-child(1)
+	text-align: left;
+`;
+const Td = styled.td`
+	color: ${(props) => props.theme.textAlternative};
+	text-align: center;
+
+	&:nth-child(1) {
+		border-bottom: 0.5px solid #f0f1f2;
+		color: ${(props) => props.theme.text};
+		font-weight: bold;
+		text-align: left;
+	}
+`;
 
 function BoxIngredients(props) {
 	const [ativo, setAtivo] = useState(true);
@@ -10,8 +52,8 @@ function BoxIngredients(props) {
 	}
 
 	return (
-		<div className="row box-ingredients">
-			<div className="box-ingredients-header">
+		<div>
+			<Header>
 				<ButtonIngredients
 					text="Ingredientes"
 					onClick={handleClick}
@@ -22,49 +64,45 @@ function BoxIngredients(props) {
 					onClick={handleClick}
 					ativo={!ativo}
 				/>
-			</div>
-			<div className="col-md-12">
-				{ativo ? (
-					<>
-						<ul className="ulIngredients">
-							{props.ingredients.map((el) => (
-								<li>{el}</li>
-							))}
-						</ul>
-						{props.observacoes.map((el) => (
-							<p>{el}</p>
+			</Header>
+			{ativo ? (
+				<>
+					<Ul>
+						{props.ingredients.map((el) => (
+							<li>{el}</li>
 						))}
-					</>
-				) : (
-					<>
-						<table className="table">
-							<thead>
-								<tr>
-									<th></th>
-									{props.nutri.header.map((el) => (
-										<th>{el}</th>
-									))}
-									<th>
-										DR<sup>*</sup>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								{props.nutri.items.map((el) => (
-									<tr>
-										{el.map((item) => (
-											<td>{item}</td>
-										))}
-									</tr>
+					</Ul>
+					{props.observacoes.map((el) => (
+						<P>{el}</P>
+					))}
+				</>
+			) : (
+				<>
+					<Table>
+						<thead>
+							<tr>
+								<th></th>
+								{props.nutri.header.map((el) => (
+									<Th>{el}</Th>
 								))}
-							</tbody>
-						</table>
-						<small>
-							* Dose de Referência para um adulto médio (2000 kcal / 8400 kJ)
-						</small>
-					</>
-				)}
-			</div>
+								<Th>
+									DR<sup>*</sup>
+								</Th>
+							</tr>
+						</thead>
+						<tbody>
+							{props.nutri.items.map((el) => (
+								<tr>
+									{el.map((item) => (
+										<Td>{item}</Td>
+									))}
+								</tr>
+							))}
+						</tbody>
+					</Table>
+					<P>* Dose de Referência para um adulto médio (2000 kcal / 8400 kJ)</P>
+				</>
+			)}
 		</div>
 	);
 }

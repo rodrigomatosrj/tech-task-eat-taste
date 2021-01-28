@@ -1,14 +1,34 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "./index.css";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+	width: 30%;
+	margin: 50px 10px;
+	padding: 20px;
+	p {
+		line-height: 50px;
+	}
+`;
+
+const Ul = styled.ul`
+	list-style-type: none;
+	font-size: 0.8rem;
+	padding: 0;
+
+	li {
+		margin-top: 10px;
+	}
+`;
 
 function Pedido() {
 	const itemsPedidos = useSelector((state) => state.items);
 	const total = useSelector((state) => state.total);
 
 	return (
-		<div className="sticky-top box-pedido">
-			<ul className="ulPedidos">
+		<Wrapper>
+			<p>Resumo do Pedido:</p>
+			<Ul>
 				{itemsPedidos.map((item) => {
 					return (
 						<li>
@@ -16,9 +36,9 @@ function Pedido() {
 						</li>
 					);
 				})}
-			</ul>
+			</Ul>
 			<p>Total pedido: &euro; {total.toFixed(2)}</p>
-		</div>
+		</Wrapper>
 	);
 }
 

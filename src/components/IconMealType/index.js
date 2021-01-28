@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import styled from "styled-components";
 
 const images = {
 	veggie: "https://eattasty.pt/img/type/vegetarian.svg",
@@ -9,10 +9,19 @@ const images = {
 	vegan: "https://eattasty.pt/img/type/vegan.svg",
 };
 
+const Span = styled.span`
+	 {
+		margin: 10px;
+		font-weight: 300;
+		color: ${(props) => props.theme.textAlternative};
+	}
+`;
+
 function IconMealType(props) {
 	return (
 		<>
-			<img src={images[props.children]} /> <span>{props.children.toUpperCase()}</span>
+			<img src={images[props.children]} />{" "}
+			<Span>{props.children.toUpperCase()}</Span>
 		</>
 	);
 }

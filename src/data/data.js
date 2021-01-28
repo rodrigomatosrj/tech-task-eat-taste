@@ -36,7 +36,7 @@ const menu = {
 			id: 2,
 			imagem:
 				"https://static.eattasty.com/cloudinary/eattasty/image/upload/q_auto/v1606762377/8033-folhados-de-queijo_xqtine.jpg",
-			nome: "Entrada - Folhados de Queijo de Cabra (150 gr)",
+			nome: "Folhados de Queijo de Cabra (150 gr)",
 			descricao:
 				"Folhados de Queijo de Cabra com Tomate Cereja, Noz e Balsámico",
 			valor: 3.9,
