@@ -11,7 +11,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
 	margin: 20px 0px;
 	border-bottom: 1px solid #ffbd1b;
-	background-color: ${props => props.theme.bodySecondary};
+	background-color: ${(props) => props.theme.bodySecondary};
 `;
 
 const WrapperImage = styled.div`
@@ -28,7 +28,7 @@ const WrapperInfo = styled.div`
 	padding: 2rem;
 	display: flex;
 	flex-direction: column;
-	color: ${props=>props.theme.textAlternative}
+	color: ${(props) => props.theme.textAlternative};
 `;
 
 const WrapperIngredients = styled.div`
@@ -77,7 +77,6 @@ function DayMenuItem(props) {
 		nome: props.nome,
 		valor: props.valor,
 	});
-	const itemsPedidos = useSelector((state) => state.items);
 	const total = useSelector((state) => state.total);
 	const [btnInfoStatus, setBtnInfoStatus] = useState(false);
 
@@ -127,7 +126,7 @@ function DayMenuItem(props) {
 						<IconMealType>{props.tipo}</IconMealType>
 						<div>
 							{props.labels.map((label) => (
-								<LabelMealSpec>{label}</LabelMealSpec>
+								<LabelMealSpec key={label}>{label}</LabelMealSpec>
 							))}
 						</div>
 					</WrapperIngredients>

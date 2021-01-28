@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 :root{
 	font-size: 16px;
 	background-color: ${(props) => props.theme.body};
+	transition: 1s;
 } 
 `;
 

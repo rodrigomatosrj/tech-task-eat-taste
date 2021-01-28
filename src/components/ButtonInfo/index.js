@@ -7,7 +7,6 @@ const IconOff = () => (
 		width="16"
 		height="16"
 		fill="currentColor"
-		class="bi bi-toggle2-off"
 		viewBox="0 0 16 16"
 	>
 		<path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z" />
@@ -21,7 +20,6 @@ const IconOn = () => (
 		width="16"
 		height="16"
 		fill="currentColor"
-		class="bi bi-toggle2-on"
 		viewBox="0 0 16 16"
 	>
 		<path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z" />

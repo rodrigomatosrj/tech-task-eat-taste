@@ -20,7 +20,7 @@ const Span = styled.span`
 function IconMealType(props) {
 	return (
 		<>
-			<img src={images[props.children]} />{" "}
+			<img src={images[props.children]} alt="#"/>{" "}
 			<Span>{props.children.toUpperCase()}</Span>
 		</>
 	);

@@ -31,7 +31,7 @@ function Pedido() {
 			<Ul>
 				{itemsPedidos.map((item) => {
 					return (
-						<li>
+						<li key={item.id}>
 							{item.nome} x {item.qtd}
 						</li>
 					);
