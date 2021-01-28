@@ -69,11 +69,11 @@ function BoxIngredients(props) {
 				<>
 					<Ul>
 						{props.ingredients.map((el) => (
-							<li>{el}</li>
+							<li key={el}>{el}</li>
 						))}
 					</Ul>
 					{props.observacoes.map((el) => (
-						<P>{el}</P>
+						<P key={el}>{el}</P>
 					))}
 				</>
 			) : (
@@ -83,7 +83,7 @@ function BoxIngredients(props) {
 							<tr>
 								<th></th>
 								{props.nutri.header.map((el) => (
-									<Th>{el}</Th>
+									<Th key={el}>{el}</Th>
 								))}
 								<Th>
 									DR<sup>*</sup>
@@ -92,9 +92,9 @@ function BoxIngredients(props) {
 						</thead>
 						<tbody>
 							{props.nutri.items.map((el) => (
-								<tr>
+								<tr key={el}>
 									{el.map((item) => (
-										<Td>{item}</Td>
+										<Td key={item}>{item}</Td>
 									))}
 								</tr>
 							))}

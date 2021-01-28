@@ -7,7 +7,9 @@ const Button = styled.button`
 	font-size: 12px;
 	font-weight: 800;
 	align-items: center;
-	border-bottom: ${(props) => (props.ativo ? "2px solid black" : "none")};
+	border-bottom-width: ${(props) => (props.ativo ? "2px" : "none")};
+	border-bottom-style: solid;
+	border-bottom-color: ${(props) => props.theme.text};
 	border-radius: 0px;
 	margin-right: 20px;
 	cursor: pointer;
