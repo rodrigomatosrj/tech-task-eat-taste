@@ -10,6 +10,7 @@ const Title = styled.h2`
 	letter-spacing: -0.32px;
 	font-weight: 600;
 	font-stretch: normal;
+	padding-left: 1rem;
 `;
 
 const Wrapper = styled.div`

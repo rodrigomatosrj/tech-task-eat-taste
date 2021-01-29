@@ -9,9 +9,29 @@ const Header = styled.header`
 const Ul = styled.ul`
 	padding-left: 40px;
 	margin-top: 0px;
-	column-count: 3;
+	column-count: 2;
 	font-size: 0.8rem;
 	padding-bottom: 20px;
+
+	@media (min-width: 576px) {
+		column-count: 3;
+	}
+
+	@media (min-width: 768px) {
+		column-count: 3;
+	}
+
+	@media (min-width: 992px) {
+		column-count: 3;
+	}
+
+	@media (min-width: 1200px) {
+		column-count: 3;
+	}
+
+	@media (min-width: 1400px) {
+		column-count: 3;
+	}
 `;
 
 const P = styled.p`
@@ -43,6 +63,10 @@ const Td = styled.td`
 		text-align: left;
 	}
 `;
+
+
+
+
 
 function BoxIngredients(props) {
 	const [ativo, setAtivo] = useState(true);

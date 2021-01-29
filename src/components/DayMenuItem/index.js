@@ -33,16 +33,85 @@ const WrapperInfo = styled.div`
 
 const WrapperIngredients = styled.div`
 	display: flex;
+	flex-direction: row;
 	justify-content: flex-start;
-	align-items: center;
-	width: 60%;
+	align-items: flex-start;
+	width: 100%;
+	padding-top: 20px;
+
+	@media (min-width: 576px) {
+		width: 60%;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	@media (min-width: 768px) {
+		width: 60%;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	@media (min-width: 992px) {
+		width: 60%;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	@media (min-width: 1200px) {
+		width: 60%;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	@media (min-width: 1400px) {
+		width: 60%;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	.labels{
+		width:50%;
+		padding-right: .5rem
+	}
 `;
 
 const WrapperActions = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 40%;
+	width: 100%;
+
+	@media (min-width: 576px) {
+		width: 40%;
+		align-items: center;
+	}
+
+	@media (min-width: 768px) {
+		width: 40%;
+		align-items: center;
+	}
+
+	@media (min-width: 992px) {
+		width: 40%;
+		align-items: center;
+	}
+
+	@media (min-width: 1200px) {
+		width: 40%;
+		align-items: center;
+	}
+
+	@media (min-width: 1400px) {
+		width: 40%;
+		align-items: center;
+	}
+`;
+
+const WrapperBtns = styled.div`
+	width: 120px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `;
 
 const Title = styled.h3`
@@ -60,7 +129,36 @@ const Title = styled.h3`
 const Row = styled.div`
 	display: flex;
 	margin-top: 20px;
+	flex-direction: column-reverse;
+	width: 100%;
+
+	@media (min-width: 576px) {
+		width: 540px;
+	}
+
+	@media (min-width: 768px) {
+		width: 720px;
+	}
+
+	@media (min-width: 992px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 960px;
+	}
+
+	@media (min-width: 1200px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 1140px;
+	}
+
+	@media (min-width: 1400px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 1320px;
+	}
 `;
+
 const Currency = styled.span`
 	font-size: 1.2rem;
 	font-weight: 300;
@@ -124,19 +222,19 @@ function DayMenuItem(props) {
 				<Row>
 					<WrapperIngredients>
 						<IconMealType>{props.tipo}</IconMealType>
-						<div>
+						<div className = "labels">
 							{props.labels.map((label) => (
 								<LabelMealSpec key={label}>{label}</LabelMealSpec>
 							))}
 						</div>
+						<ButtonInfo onClick={buttonInfoHandler} selected={btnInfoStatus} />
 					</WrapperIngredients>
 					<WrapperActions>
-						<ButtonInfo onClick={buttonInfoHandler} selected={btnInfoStatus} />
 						<Currency>{props.valor.toFixed(2)}</Currency>
 						{item.qtd === 0 ? (
 							<ButtonAddItem onClick={buttonAddItemHandler} />
 						) : (
-							<>
+							<WrapperBtns>
 								<ButtonPlusMinus onClick={buttonPlusHandler}>
 									{" "}
 									+{" "}
@@ -146,7 +244,7 @@ function DayMenuItem(props) {
 									{" "}
 									-{" "}
 								</ButtonPlusMinus>
-							</>
+							</WrapperBtns>
 						)}
 					</WrapperActions>
 				</Row>

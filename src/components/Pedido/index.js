@@ -3,17 +3,43 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-	width: 30%;
+	width: 100%;
 	margin: 50px 10px;
 	padding: 20px;
+
 	p {
 		line-height: 50px;
+	}
+
+	@media (min-width: 576px) {
+		width: 30%;
+		margin: 50px 10px;
+	}
+
+	@media (min-width: 768px) {
+		width: 30%;
+		margin: 50px 10px;
+	}
+
+	@media (min-width: 992px) {
+		width: 30%;
+		margin: 50px 10px;
+	}
+
+	@media (min-width: 1200px) {
+		width: 30%;
+		margin: 50px 10px;
+	}
+
+	@media (min-width: 1400px) {
+		width: 30%;
+		margin: 50px 10px;
 	}
 `;
 
 const Ul = styled.ul`
 	list-style-type: none;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	padding: 0;
 
 	li {

@@ -4,14 +4,42 @@ import ButtonMode from "../ButtonMode/index";
 import styled from "styled-components";
 
 const DayMenuWrapper = styled.div`
-	width: 70%;
+	width: 100%;
+	padding-top: 20px;
+
+	@media (min-width: 576px) {
+		width: 70%;
+	}
+
+	@media (min-width: 768px) {
+		width: 70%;
+	}
+
+	@media (min-width: 992px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 70%;
+	}
+
+	@media (min-width: 1200px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 70%;
+	}
+
+	@media (min-width: 1400px) {
+		justify-content: space-between;
+		flex-direction: row;
+		width: 70%;
+	}
 `;
 
 const Title = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-itens: center;
-
+	padding: 1rem;
+	
 	h1 {
 		font-size: 3rem;
 		font-weight: 600;
@@ -20,7 +48,6 @@ const Title = styled.div`
 		line-height: 1.25;
 		letter-spacing: -1.92px;
 		display: inline;
-		padding-right: 100px;
 	}
 `;
 

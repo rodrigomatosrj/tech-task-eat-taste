@@ -16,11 +16,30 @@ const GlobalStyle = createGlobalStyle`
   }
 
 :root{
-	font-size: 16px;
+	font-size: 10px;
 	background-color: ${(props) => props.theme.body};
 	transition: 1s;
-} 
-`;
+	
+	@media (min-width: 576px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 16px;
+	}
+
+	@media (min-width: 1400px) {
+		font-size: 16px;
+	}
+}`;
 
 const Container = styled.div`
 	display: flex;
@@ -29,8 +48,8 @@ const Container = styled.div`
 
 const MainGrid = styled.div`
 	display: flex;
-	justify-content: space-between;
 	width: 100%;
+	flex-direction: column;
 
 	@media (min-width: 576px) {
 		width: 540px;
@@ -41,14 +60,20 @@ const MainGrid = styled.div`
 	}
 
 	@media (min-width: 992px) {
+		justify-content: space-between;
+		flex-direction: row;
 		width: 960px;
 	}
 
 	@media (min-width: 1200px) {
+		justify-content: space-between;
+		flex-direction: row;
 		width: 1140px;
 	}
 
 	@media (min-width: 1400px) {
+		justify-content: space-between;
+		flex-direction: row;
 		width: 1320px;
 	}
 `;

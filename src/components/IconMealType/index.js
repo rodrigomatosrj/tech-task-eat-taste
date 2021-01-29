@@ -9,8 +9,13 @@ const images = {
 	vegan: "https://eattasty.pt/img/type/vegan.svg",
 };
 
-const Span = styled.span`
-	 {
+
+const Wrapper = styled.div`
+	display: flex;
+	align-items: center;
+	width: 25%;
+
+	span {
 		margin: 10px;
 		font-weight: 300;
 		color: ${(props) => props.theme.textAlternative};
@@ -19,10 +24,10 @@ const Span = styled.span`
 
 function IconMealType(props) {
 	return (
-		<>
+		<Wrapper>
 			<img src={images[props.children]} alt="#"/>{" "}
-			<Span>{props.children.toUpperCase()}</Span>
-		</>
+			<span>{props.children.toUpperCase()}</span>
+		</Wrapper>
 	);
 }
 
